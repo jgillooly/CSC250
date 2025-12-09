@@ -6,23 +6,110 @@ namespace TestingProject
     public class Test_Sort
     {
         [TestMethod]
-        public void HappyPath()
+        public void InsertionHappyPath()
         {
             int[] initial = { 5, 3, 4, 1, 2 };
             int[] expected = { 1, 2, 3, 4, 5 };
 
-            var output = Sorts.BubbleSort(initial);
+            var output = Sorts.InsertionSort(initial);
+
+            Assert.IsTrue(expected.SequenceEqual(output));
+        }
+
+        [TestMethod]
+        public void InsertionNegativePath()
+        {
+            int[] initial = { 5, 3, 4, 1, 2, -1 };
+            int[] expected = { -1, 1, 2, 3, 4, 5 };
+
+            var output = Sorts.InsertionSort(initial);
+
+            Assert.IsTrue(expected.SequenceEqual(output));
+        }
+
+        [TestMethod]
+        public void InsertionDuplicatePath()
+        {
+            int[] initial = { 5, 3, 4, 1, 2, 1 };
+            int[] expected = { 1, 1, 2, 3, 4, 5 };
+
+            var output = Sorts.InsertionSort(initial);
+
+            Assert.IsTrue(expected.SequenceEqual(output));
+        }
+
+        [TestMethod]
+        public void InsertionSinglePath()
+        {
+            int[] initial = { 1 };
+            int[] expected = { 1 };
+
+            var output = Sorts.InsertionSort(initial);
+
+            Assert.IsTrue(expected.SequenceEqual(output));
+        }
+
+        [TestMethod]
+        public void SelectionHappyPath()
+        {
+            int[] initial = { 5, 3, 4, 1, 2 };
+            int[] expected = { 1, 2, 3, 4, 5 };
+
+            var output = Sorts.SelectionSort(initial);
+
+            Assert.IsTrue(expected.SequenceEqual(output));
+        }
+
+        [TestMethod]
+        public void SelectionNegativePath()
+        {
+            int[] initial = { 5, 3, 4, 1, 2, -1 };
+            int[] expected = { -1, 1, 2, 3, 4, 5 };
+
+            var output = Sorts.SelectionSort(initial);
+
+            Assert.IsTrue(expected.SequenceEqual(output));
+        }
+
+        [TestMethod]
+        public void SelectionDuplicatePath()
+        {
+            int[] initial = { 5, 3, 4, 1, 2, 1 };
+            int[] expected = { 1, 1, 2, 3, 4, 5 };
+
+            var output = Sorts.SelectionSort(initial);
+
+            Assert.IsTrue(expected.SequenceEqual(output));
+        }
+
+        [TestMethod]
+        public void SelectionSinglePath()
+        {
+            int[] initial = { 1 };
+            int[] expected = { 1 };
+
+            var output = Sorts.SelectionSort(initial);
 
             Assert.IsTrue(expected.SequenceEqual(output));
         }
 
         [TestMethod]
         [ExpectedException(typeof(NullReferenceException))]
-        public void Sadpath()
+        public void InsertionSadpath()
         {
             int[]? initial = null;
-            Sorts.BubbleSort(initial);
+            Sorts.InsertionSort(initial);
      
+
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(NullReferenceException))]
+        public void SelectionSadpath()
+        {
+            int[]? initial = null;
+            Sorts.SelectionSort(initial);
+
 
         }
 
@@ -42,17 +129,6 @@ namespace TestingProject
         {
             int[] initial = null;
             Sorts.Swap(ref initial, 0, 1);
-        }
-
-        [TestMethod]
-        public void TestBubble()
-        {
-            int[] initial = { 5, 3, 4, 1, 2 };
-            int[] expected = { 3, 4, 1, 2, 5 };
-
-            Sorts.Bubble(ref initial);
-
-            Assert.IsTrue(expected.SequenceEqual(initial));
         }
     }
 }

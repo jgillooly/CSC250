@@ -1,0 +1,25 @@
+LOOSE ISOMORPHS:
+111- ate, bar, eat, fit, sap
+11111- aedor, eiruw, mates
+112- look, meet, seep, seer, took
+1135- bdbbbaddcb, cacccdaabc, cdcccaddbc, dcdddbccad
+12- add, egg, foo, gag, tot, yay
+1234- abaadcbbda, babcdabbac, bcbadcbbca, bdbcadbbdc, cacccbaadb, cacdbaccad, dcddabccad
+2- aa, bb
+333- aaabbbzzz, abzzbabaz, bazzababz, bbbaaazzz
+
+EXACT ISOMORPHS:
+00- aa, bb
+000111222- aaabbbzzz, bbbaaazzz
+010- gag, tot, yay
+0100021130- bdbbbaddcb, cacccdaabc, cdcccaddbc, dcdddbccad
+0100231120- abaadcbbda, dcddabccad
+0102310012- babcdabbac, bcbadcbbca, bdbcadbbdc, cacdbaccad
+011- add, egg, foo
+0112- look, meet, seep, seer, took
+012- ate, bar, eat, fit, sap
+012210102- abzzbabaz, bazzababz
+01234- aedor, eiruw, mates
+
+NON ISOMORPHS:
+aaa, bbcdcbcbdd, fear, warrior

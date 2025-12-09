@@ -1,0 +1,45 @@
+MERGESORT O(nlog(n))
+
+if size of data is more than one
+	split data in half
+		merge sort each half
+		merge the halves
+		~*sorted*~
+otherwise data is sorted (one value on its own is sorted)
+~*sorted*~
+
+Plaintext-
+MERGE
+input two sets of sorted data
+output one sorted set of data
+
+compare both sets of data
+	starting from beginning of both
+		compare the first element of each
+			insert the lower value into the next available spot in the larger set
+		compare the next element from the lower value set with the current greater value element
+			insert the lower value into the next available spot of the larger set
+		continue until all elements from one of the smaller sets are inserted
+			insert remaining values from remaining set
+			
+			
+mergesort: unsorted data
+	if unsorted data is only one element
+		return data
+	
+	
+	
+Pseudocode-
+function mergeSort(unsortedData) {
+	if unsortedData.length == 1
+		return
+	if unsortedData.length == 2
+		Merge the two values of the data
+	else
+		data1 = first half of unsorted data
+		data2 = second half of unsorted data
+		
+		mergeSort(data1)
+		mergeSort(data2)
+		Merge(data1, data2)
+}

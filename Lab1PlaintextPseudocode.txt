@@ -1,0 +1,48 @@
+[PLAINTEXT] {
+//Insertion sort
+Iterate over the array starting with the second element
+	use this element as the insertion value
+	iterate over previous elements of the array reverse
+		if the element to the left is greater
+			set the value of the current element to the value of the left element
+		else
+			insert value at current element
+			break out of loop
+		if current index is 0
+			insert value
+			break out of loop
+			
+//Selection Sort
+iterate over every element
+	select value at that element
+	for each element to the right
+		compare selected to with value at that element
+			if selected value is greater
+				swap selected value with value at current index
+			else continue
+	insert selection into current selection index
+}
+
+[PSEUDOCODE]{
+//Insertion sort
+	bool inserted = false;
+	for i = 1, i < elements.length
+		inserted = false;
+		value = elements[i]
+		for j = i, j > 0
+			if ( elements[j - 1] > value)
+				elements[j] = elements[j - 1]
+			else
+				elements[j] = value
+				inserted = true;
+				break
+		if !inserted elements[0] = value;
+		
+//Selection sort
+	for i = 0, i < elements.length - 1
+		selected index = i;
+		for j = i + 1, i < elements.length
+			if elements[j] < elements[i]
+				selected index = j;
+		swap(i, j)
+	

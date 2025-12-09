@@ -1,0 +1,50 @@
+N QUEENS
+
+Input: n (number of queens as well as the dimensions of the board)
+Output: Number of solutions and also the layout of each solutions
+
+Go through each possible position for a row, if valid go through the possible positions for the next row. If invalid backtrack to previous row. Document valid solutions.
+
+
+PSEUDOCODE -
+	static currentN
+	static List<> Solutions
+	
+	function FindSolutions(n)
+		currentN = n;
+		int[] board;
+		Permutation(board, 0)
+	
+	function Permutation(board, row)
+		for all columns
+			if checkposition(row, column)
+				int[] newboard
+				CopyArray(board, newboard)
+				newboard[row, column] = 1;
+				if (row = currentN - 1)
+					solutions.add(newboard)
+					return
+				Permutation(newboard, row + 1)
+	
+	function CheckPosition(board, row, column)
+		for each row at position column
+			if board[row,column] == 1 return false
+		
+		for each position diagonally up left
+			if board[position] == 1 return false
+		
+		for each position diagonally up right
+			if board[position] == 1 return false
+			
+		
+		return true
+		
+	function CopyArray(source, destination)
+		for i < currentN
+			for j < currentN
+				destination[i,j] = source[i,j]
+				
+UNDERSTANDING-
+	The algorithm starts with the FindSolutions method which sets the static variable that holds the N value and also creates the inital board array. It then calls the first instance of Permutation on row zero which will recursively call itself for each subsequent row as long as it has a valid position. Permutation will backtrack if it hits a dead end and also record any successful layouts as it finds them. After the FindSolutions method has finished, valid solutions can be found in the static list of integer arrays in the Queens class.
+	
+	The bigO complexity for this algorithm is N! (N factorial). This is because each choice/possibilty has 1 fewer queen to place until we reach 1/0. 

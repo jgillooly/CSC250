@@ -1,0 +1,7 @@
+//Insertionsort
+Insertion sort starts properly on line(33) which establishes a for loop starting at the second index of the array. It starts out by setting the boolean "inserted" to false and the current value to be inserted to index i within the array. A second for loop is established, going from the current index of the outer loop down to 1. If the item at the current index of the inner loop is greater than the selected value, it is moved up. If it is less than the selected value, the value is inserted as its position has been found. If the inner for loop completes without the "inserted" boolean being set to true, it can be reasoned that the value belongs at the beginning of the array and its value is inserted accordingly
+BigO notation is N^2 because the highest number of nested loops is two.
+
+//selectionsort
+Slection sort starts at the beginning of the array and sets the selected index equal to i from the first for loop. A second for loop is then used to compare that index to all later indexes. If the value at a later index is less than the value at the current selected index, then that later index becomes the current index. Upon completion of the inner for loop, the current selected index is swapped with index i and the process repeats until the array has been fully indexed.
+BigO notation is N^2 because the highest number of nested loops is two.

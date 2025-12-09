@@ -1,0 +1,35 @@
+BINARY SEARCH
+
+input
+	value we are looking for
+	sorted list of values
+output
+	the location of the value we're looking for
+	
+look at the middle value and compare to search value
+	if same as search value, return the location
+	otherwise determine if middle value is less than or greater than search value
+	start again using first half or last half of values depending on comparison
+	
+function binarySearch(searchValue, listofvalues, firstindex, lastindex) {
+	middlevalueindex = lastindex - ((lastindex - firstindex) / 2)
+	middlevalue listofvalues[middlevalueindex]
+	if (middlevalue == searchvalue) return middlevalueindex
+	elseif (middlevalue > searchValue) {
+		newlastindex = middlevalueindex - 1
+		return binarySearch(searchValue, listofvalues, firstindex, newlastindex)
+	} else {
+		newfirstindex = middlevalueindex + 1
+		return binarySearch(searchValue, listofvalues, newfirstindex, lastindex)
+	}
+}
+9 operations worst case ^^^
+
+BIG O NOTATION
+Log2(n)
+
+binarysearch (n)
+	binarysearch (n/2)
+		binarysearch (n/4)
+			binarysearch (n/8)
+				binarysearch (n/16)

@@ -1,0 +1,90 @@
+QUICKSORT
+
+Plaintext-
+	input collection of data
+	output sorted collection of data
+
+	choose a good pivot
+
+	look for any smaller values to the right of the pivot
+		move smaller values to the left of the pivot
+	look for any larger values to the left of the pivot
+		move any larger values to the right	
+	quicksort left partition
+	quicksort right partition
+
+
+	finding a pivot
+	input a collection of data
+	output index of value close enough to the middle
+
+	get the index of the middle element
+	compare with first index
+		if middle value is smaller than first
+		swap
+	if middle index is larger than the last
+		swap
+	return middle index
+
+Pseudocode-
+
+function GetPivot(data, startindex, endindex) {
+	pivot = endIndex - ( endindex - startindex )/2
+	values = new int[3]
+	values[0] = ints[startindex]
+	values[1] = ints[pivot]
+	values[2] = ints[endindex]
+	values = BubbleSort(values)
+	
+	ints[startindex] = values[0]
+	ints[pivot] = values[1]
+	ints[endindex] = values[2]
+	
+	return pivot
+	
+}
+
+function QuickSort(data, startindex, endindex) {
+	if (endindex == startindex)
+	{
+		return
+	}
+	else if (endindex - startindex == 1)
+	{
+		if(data[startindex] > data[endindex]) Swap(data, startindex, endindex)
+	}
+	else
+	{
+		pivot = GetPivot(data, startindex, endindex)
+		swapping = true
+		while (swapping) {
+			leftIndex = -1
+			for each index left of the pivot {
+				if data[index] > data[pivot]
+					leftIndex = index
+					break
+			}
+			if (leftIndex = -1)
+				leftIndex = pivot
+				swapping = false
+			
+			rightIndex = -1
+			for each index right of the pivot {
+				if data[index] < data[pivot]
+					rightIndex = index
+					break
+			}
+			if (rightIndex = -1)
+				rightIndex = pivot
+				swapping = false
+			
+			Swap(data, leftIndex, rightIndex)
+			if (leftIndex is pivot) pivot = rightIndex
+			else if (rightIndex is pivot) pivot = leftIndex
+		}
+		
+		quicksort(data, startindex, pivot - 1)
+		
+		quicksort(data, pivot + 1, endindex)
+	}
+}
